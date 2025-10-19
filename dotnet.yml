@@ -13,19 +13,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup .NET 8 SDK
-        uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore NameSorter.sln
+      - run: dotnet restore NameSorter.sln
 
-      - name: Build solution
-        run: dotnet build NameSorter.sln --configuration Debug --no-restore
+      - run: dotnet build NameSorter.sln --configuration Debug
 
-      - name: Run tests
-        run: dotnet test NameSorter.sln --configuration Debug --no-restore --verbosity normal
+      - run: dotnet test NameSorter.sln --configuration Debug --verbosity normal
