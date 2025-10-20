@@ -24,7 +24,7 @@ jobs:
         run: dotnet restore NameSorter.sln
 
       - name: Build solution (Release)
-        run: dotnet build NameSorter.sln --configuration Release --no-restore
+        run: dotnet build NameSorter.sln --configuration Release
 
       - name: Run tests (Release)
-        run: dotnet test NameSorter.sln --configuration Release --no-build --verbosity normal
+        run: dotnet test NameSorter.sln --configuration Release --verbosity normal
