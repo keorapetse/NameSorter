@@ -5,6 +5,7 @@ namespace NameSorter.App.Services
 {
     public class NameSorterService : INameSorter
     {
+        // sort by last name alphabetically and then by given names
         public List<PersonName> SortNames(List<PersonName> names)
         {
             return names.OrderBy(n => n.LastName).ThenBy(n => string.Join(" ", n.GivenNames)).ToList();
